@@ -1,0 +1,1 @@
+export function requireAdmin(session:{role?:string,mfa?:boolean}){if(session.role!=='ADMIN'||session.mfa!==true){const e:any=new Error('FORBIDDEN');e.status=403;throw e;}return true}
