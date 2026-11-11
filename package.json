@@ -1,0 +1,1 @@
+{"name":"aihcp-v6-build0","private":true,"workspaces":["apps/*","packages/*"],"scripts":{"test":"node tests.mjs","check":"node tests.mjs"}}
