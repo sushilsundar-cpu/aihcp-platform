@@ -1,0 +1,4 @@
+-- Build 0 foundation only. Apply through versioned migrations; never edit production schema manually.
+create table if not exists app_config (key text primary key, value jsonb not null, class text not null check (class in ('FOUNDER_SAFE','PROTECTED')), version bigint not null default 1, updated_at timestamptz not null default now());
+create table if not exists audit_event (id bigint generated always as identity primary key, actor_id text not null, action text not null, reason text not null, before_value jsonb, after_value jsonb, created_at timestamptz not null default now());
+create table if not exists feature_flag (key text primary key, enabled boolean not null default false, updated_at timestamptz not null default now());
