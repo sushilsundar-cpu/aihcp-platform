@@ -1,0 +1,2 @@
+export interface AuditEvent{actorId:string;action:string;reason:string;before?:unknown;after?:unknown;at:string}
+export class AuditLog{private events:AuditEvent[]=[];append(e:AuditEvent){this.events.push(Object.freeze({...e}));}all(){return [...this.events]}}

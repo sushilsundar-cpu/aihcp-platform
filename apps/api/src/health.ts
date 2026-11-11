@@ -1,0 +1,1 @@
+export const health=()=>({status:'ok',service:'aihcp-api',environment:process.env.AIHCP_ENV||'DEV'});
